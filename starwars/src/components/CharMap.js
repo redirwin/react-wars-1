@@ -2,11 +2,17 @@ import React from 'react';
 import StarWars from './StarWars';
 
 const CharMap = props => {
-	// console.log(props.characterList);
 	return (
+		// Map over character list and pass some stats for display.
 		<div>
-			{props.characterList.map(item => {
-				return <StarWars name={item.name} />;
+			{props.characterList.map(character => {
+				return (
+					<StarWars
+						key={character.created}
+						name={character.name}
+						birthYear={character.birth_year}
+					/>
+				);
 			})}
 		</div>
 	);

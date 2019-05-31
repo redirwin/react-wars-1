@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CharMap from './components/CharMap';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
 	constructor() {
@@ -31,12 +31,14 @@ class App extends Component {
 	};
 
 	render() {
-		// console.log('From App.js');
 		return (
 			<div className="App">
-				<h1 className="Header">React Wars</h1>
+				<div className="Header">
+					<h1>The Star Wars Stars</h1>
+					<h2>Courtesy of React & Dave Irwin</h2>
+				</div>
 				<CharMap
-					characterList={this.state.starwarsChars}
+					characterList={this.state.starwarsChars} // Pass character list to CharMap for processing.
 				/>
 			</div>
 		);
