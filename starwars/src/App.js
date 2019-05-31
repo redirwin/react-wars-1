@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import CharMap from './components/CharMap';
+import Pagination from './components/Pagination';
 import './App.scss';
 
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			starwarsChars: []
+			starwarsChars: [],
+			url: 'https://swapi.co/api/people/',
+			urlPage: 1,
+			newURL: ''
 		};
 	}
 
 	componentDidMount() {
-		this.getCharacters('https://swapi.co/api/people/');
+		this.getCharacters(this.state.url);
 	}
 
 	getCharacters = URL => {
@@ -30,8 +34,25 @@ class App extends Component {
 			});
 	};
 
+	getNewPage = event => {
+		console.log(this.state.newURL);
+		if (event.currentTarget.name === 'next') {
+			console.log(this.state.urlPage);
+
+			this.setState({
+				urlPage: parseInt(this.state.urlPage) + 1,
+				newURL: `${this.state.url}?page=${
+					this.state.urlPage
+				}`
+			});
+			this.getCharacters(this.state.newURL);
+		} else {
+			// console.log('previous');
+		}
+	};
+
 	render() {
-		console.log(this.state.starwarsChars);
+		// console.log(this.state.starwarsChars);
 		return (
 			<div className="App">
 				<div className="Header">
@@ -41,6 +62,7 @@ class App extends Component {
 				<CharMap
 					characterList={this.state.starwarsChars} // Pass character list to CharMap for processing.
 				/>
+				<Pagination getNewPage={this.getNewPage} />
 			</div>
 		);
 	}
