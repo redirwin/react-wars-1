@@ -34,7 +34,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<div className="Header">
-					<h1>The Star Wars Stars</h1>
+					<h1>The Stars of Star Wars</h1>
 					<h2>Courtesy of React & Dave Irwin</h2>
 				</div>
 				<CharMap

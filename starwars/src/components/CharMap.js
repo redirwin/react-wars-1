@@ -11,6 +11,11 @@ const CharMap = props => {
 						key={character.created}
 						name={character.name}
 						birthYear={character.birth_year}
+						gender={character.gender}
+						height={character.height}
+						mass={character.mass}
+						hairColor={character.hair_color}
+						eyeColor={character.eye_color}
 					/>
 				);
 			})}

@@ -8,6 +8,11 @@ const StarWars = props => {
 			<div className="character-card">
 				<p>Name: {props.name}</p>
 				<p>Born: {props.birthYear}</p>
+				<p>Gender: {props.gender}</p>
+				<p>Heigh: {props.height}cm</p>
+				<p>Weight: {props.mass}kg</p>
+				<p>Hair Color: {props.hairColor}</p>
+				<p>Eye Color: {props.eyeColor}</p>
 			</div>
 		</div>
 	);
