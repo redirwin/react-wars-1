@@ -6,7 +6,9 @@ const StarWars = props => {
 	return (
 		<div className="character-card-container">
 			<div className="character-card">
-				<p>Name: {props.name}</p>
+				<p className="character-name">
+					Name: {props.name}
+				</p>
 				<p>Born: {props.birthYear}</p>
 				<p>Gender: {props.gender}</p>
 				<p>Heigh: {props.height}cm</p>
