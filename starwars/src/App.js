@@ -37,6 +37,7 @@ class App extends Component {
 	getNewPage = event => {
 		console.log(this.state.newURL);
 		if (event.currentTarget.name === 'next') {
+			console.log('next');
 			console.log(this.state.urlPage);
 
 			this.setState({
@@ -45,9 +46,9 @@ class App extends Component {
 					this.state.urlPage
 				}`
 			});
-			this.getCharacters(this.state.newURL);
+			// this.getCharacters(this.state.newURL);
 		} else {
-			// console.log('previous');
+			console.log('previous');
 		}
 	};
 
